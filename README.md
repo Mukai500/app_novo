@@ -1,4 +1,4 @@
-# app_novo
+# Meu Curriculo
 
 A new Flutter project.
 
