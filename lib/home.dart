@@ -11,9 +11,18 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-      leading: Drawer(),
-      title: Text("TESTE"),
-    ));
+      appBar: AppBar(
+        title: Text("App Home"),
+        actions: [Icon(Icons.abc)],
+      ),
+      body: Container(
+          child: Column(
+        children: [
+          Card(
+            color: Colors.amber,
+          )
+        ],
+      )),
+    );
   }
 }
