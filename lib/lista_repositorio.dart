@@ -20,6 +20,8 @@ class ListRepository extends StatelessWidget {
                 child: Column(
                   children: [
                     ListTile(
+                      leading: Image.network(
+                          "${repositories[index].owner?.avatarUrl}"),
                       title: Text("${repositories[index].name}"),
                       subtitle: Text("${repositories[index].description}"),
                     ),

@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:app_novo/lista_repositorio.dart';
+import 'package:app_novo/models/repository.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:app_novo/models/repository.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -24,19 +24,21 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   var _repositorios = <Repository>[];
+  var _owner = <Owner>[];
 
   Future<void> searchRepositories() async {
     final response =
         await http.get(Uri.parse('http://api.github.com/users/NSuzano/repos'));
     var data = jsonDecode(response.body);
-    debugPrint("DATA: $data");
+
+    debugPrint("DATA: ${data[0]['owner']}");
+
     setState(() {
       _repositorios =
           (data as List).map((e) => Repository.fromJson(e)).toList();
       _repositorios.forEach((elements) {
         print(elements.name);
       });
-      print(_repositorios);
     });
   }
 
