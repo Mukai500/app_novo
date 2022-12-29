@@ -8,36 +8,50 @@ class ListRepository extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: repositories.length,
-      itemBuilder: ((context, index) {
-        return Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              Card(
-                elevation: 5.0,
-                child: Column(
-                  children: [
-                    ListTile(
-                      leading: Image.network(
-                          "${repositories[index].owner?.avatarUrl}"),
-                      title: Text("${repositories[index].name}"),
-                      subtitle: Text("${repositories[index].description}"),
-                    ),
-                    ButtonBar(
+    final text = MediaQuery.of(context).platformBrightness == Brightness.dark
+        ? 'DarkTheme'
+        : 'LighTheme';
+
+    return Column(
+      children: [
+        Center(
+          child: Column(children: []),
+        ),
+        ListView.builder(
+          scrollDirection: Axis.vertical,
+          shrinkWrap: true,
+          itemCount: repositories.length,
+          itemBuilder: ((context, index) {
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Card(
+                    elevation: 5.0,
+                    child: Column(
                       children: [
-                        ElevatedButton(
-                            onPressed: () {}, child: Text("Abrir Repositório"))
+                        ListTile(
+                          leading: Image.network(
+                              "${repositories[index].owner?.avatarUrl}"),
+                          title: Text("${repositories[index].name}"),
+                          subtitle: Text("${repositories[index].description}"),
+                        ),
+                        ButtonBar(
+                          children: [
+                            ElevatedButton(
+                                onPressed: () {},
+                                child: Text("Abrir Repositório"))
+                          ],
+                        ),
                       ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
-        );
-      }),
+            );
+          }),
+        ),
+      ],
     );
   }
 }
