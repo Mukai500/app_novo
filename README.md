@@ -1,16 +1,39 @@
-# Meu Curriculo
+# Big Game Survey 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/NSuzano/Meu-Curriculo/blob/master/LICENCE) 
 
-A new Flutter project.
+# Sobre o projeto
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+Meu-Curriculo(Nome temporário) é uma aplicação mobile construída para recrutadores, como um portifólio.
 
-A few resources to get you started if this is your first Flutter project:
+A aplicação consiste em ser um projeto para ser um como se fosse um currículo, mostrando: experiências, certificações, cursos e utilizando a API do Git Hub, mostrando os meus repositórios e informações sobre ele na tela do App.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Layout mobile
+![Mobile 1](https://github.com/acenelio/assets/raw/main/sds1/mobile1.png) ![Mobile 2](https://github.com/acenelio/assets/raw/main/sds1/mobile2.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Layout web
+![Web 1](https://github.com/acenelio/assets/raw/main/sds1/web1.png)
+
+![Web 2](https://github.com/acenelio/assets/raw/main/sds1/web2.png)
+
+
+
+# Tecnologias utilizadas
+## Back end
+- Dart
+## Front end
+- Flutter
+## Dependências
+- Provider
+- Http
+
+# Como executar o projeto
+
+
+
+# Autor
+
+Nathan Suzano Sineiro
+
+https://www.linkedin.com/in/nathan-suzano-53a82910b/
+
