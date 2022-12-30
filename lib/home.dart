@@ -54,24 +54,23 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('NSuzano API GitHub'),
-          actions: [BotaoMudarTema()],
+          automaticallyImplyLeading: true,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          actions: [
+            Row(
+              children: [
+                Icon(Icons.dark_mode),
+                BotaoMudarTema(),
+              ],
+            )
+          ],
         ),
-        body: Center(
-          child: Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Container(
-              child: Column(
-                children: [
-                  Text(
-                    "BOTAO",
-                  ),
-                  ElevatedButton(
-                      onPressed: searchRepositories, child: Text("TESTE")),
-                  Expanded(child: ListRepository(repositories: _repositorios))
-                ],
-              ),
-            ),
+        body: Container(
+          child: Column(
+            children: [
+              Expanded(child: ListRepository(repositories: _repositorios))
+            ],
           ),
         ));
   }

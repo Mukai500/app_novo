@@ -6,19 +6,38 @@ class Repository {
   String? description;
   String? avatar_url;
   Owner? owner;
+  String? created_at;
+  String? updated_at;
+  String? language;
+  String? visibility;
 
-  Repository(this.id, this.name, this.htmlurl, this.stargazerCount,
-      this.description, this.avatar_url, this.owner);
+  Repository(
+      this.id,
+      this.name,
+      this.htmlurl,
+      this.stargazerCount,
+      this.description,
+      this.avatar_url,
+      this.owner,
+      this.created_at,
+      this.updated_at,
+      this.language,
+      this.visibility);
 
   factory Repository.fromJson(Map<String, dynamic> json) {
     return Repository(
-        json['id'],
-        json['name'],
-        json['html_url'],
-        json['stargazers_count'],
-        json['description'],
-        json['avatar_url'],
-        Owner.fromJson(json['owner']));
+      json['id'],
+      json['name'],
+      json['html_url'],
+      json['stargazers_count'],
+      json['description'],
+      json['avatar_url'],
+      Owner.fromJson(json['owner']),
+      json['created_at'],
+      json['updated_at'],
+      json['language'],
+      json['visibility'],
+    );
   }
 }
 
