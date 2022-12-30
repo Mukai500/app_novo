@@ -1,4 +1,4 @@
-# Big Game Survey 
+# Meu Currículo
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/NSuzano/Meu-Curriculo/blob/master/LICENCE) 
 
 # Sobre o projeto
