@@ -8,13 +8,14 @@ Meu-Curriculo(Nome temporário) é uma aplicação mobile construída para recru
 
 A aplicação consiste em ser um projeto para ser um como se fosse um currículo, mostrando: experiências, certificações, cursos e utilizando a API do Git Hub, mostrando os meus repositórios e informações sobre ele na tela do App.
 
-## Layout mobile
-![Mobile 1](https://github.com/acenelio/assets/raw/main/sds1/mobile1.png) ![Mobile 2](https://github.com/acenelio/assets/raw/main/sds1/mobile2.png)
+## Layout 
 
-## Layout web
-![Web 1](https://github.com/acenelio/assets/raw/main/sds1/web1.png)
+### - Adicionado um Botão de Dark mode e tambem funciona se mudar o sistema.
 
-![Web 2](https://github.com/acenelio/assets/raw/main/sds1/web2.png)
+### - Clicando no Repositório, abre o link no navegador
+
+<img src="https://github.com/NSuzano/MyResumeApp/blob/master/assets/Screenshot_1672622725.png" width="270">        <img src="https://github.com/NSuzano/MyResumeApp/blob/master/assets/Screenshot_1672623876.png" width="270">
+
 
 
 
