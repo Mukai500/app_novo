@@ -21,60 +21,58 @@ class ListRepository extends StatelessWidget {
       children: [
         _buildHeader(context),
         _buildTitle("Skills"),
-
         _buildRow("Flutter", 0.8),
         _buildRow("Dart", 0.85),
         _buildRow("JavaScript", 0.5),
         _buildRow("PHP", 0.55),
-
         Text(
           "Repositórios do meu GitHub: ",
         ),
-        // Flexible(
-        //   child: Container(
-        //     color: Colors.black26,
-        //     child: ListView.builder(
-        //       scrollDirection: Axis.vertical,
-        //       itemCount: repositories.length,
-        //       itemBuilder: ((context, index) {
-        //         return Padding(
-        //           padding: const EdgeInsets.all(8.0),
-        //           child: Column(
-        //             children: [
-        //               Card(
-        //                 elevation: 5.0,
-        //                 child: Column(
-        //                   children: [
-        //                     ListTile(
-        //                       leading: Image.network(
-        //                           "${repositories[index].owner?.avatarUrl}"),
-        //                       title: Padding(
-        //                         padding: const EdgeInsets.all(8.0),
-        //                         child: Text(
-        //                             "Repositório: ${repositories[index].name}"),
-        //                       ),
-        //                       subtitle: Text(repositories[index].description ==
-        //                               null
-        //                           ? "Descrição: Sem descrição"
-        //                           : "Descrição: ${repositories[index].description}"),
-        //                     ),
-        //                     ButtonBar(
-        //                       children: [
-        //                         ElevatedButton(
-        //                             onPressed: () {},
-        //                             child: Text("Abrir Repositório"))
-        //                       ],
-        //                     ),
-        //                   ],
-        //                 ),
-        //               ),
-        //             ],
-        //           ),
-        //         );
-        //       }),
-        //     ),
-        //   ),
-        // ),
+        Flexible(
+          child: Container(
+            color: Colors.black26,
+            child: ListView.builder(
+              scrollDirection: Axis.vertical,
+              itemCount: repositories.length,
+              itemBuilder: ((context, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Card(
+                        elevation: 5.0,
+                        child: Column(
+                          children: [
+                            ListTile(
+                              leading: Image.network(
+                                  "${repositories[index].owner?.avatarUrl}"),
+                              title: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                    "Repositório: ${repositories[index].name}"),
+                              ),
+                              subtitle: Text(repositories[index].description ==
+                                      null
+                                  ? "Descrição: Sem descrição"
+                                  : "Descrição: ${repositories[index].description}"),
+                            ),
+                            ButtonBar(
+                              children: [
+                                ElevatedButton(
+                                    onPressed: () {},
+                                    child: Text("Abrir Repositório"))
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }),
+            ),
+          ),
+        ),
       ],
     );
   }
@@ -159,6 +157,9 @@ Row _buildHeader(BuildContext context) {
                 Text("Rio de Janeiro, Brazil")
               ],
             ),
+            Row(
+              children: [Container()],
+            )
           ],
         ),
       ),
