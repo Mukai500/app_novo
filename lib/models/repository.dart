@@ -6,8 +6,8 @@ class Repository {
   String? description;
   String? avatar_url;
   Owner? owner;
-  String? created_at;
-  String? updated_at;
+  DateTime created_at;
+  DateTime updated_at;
   String? language;
   String? visibility;
 
@@ -33,8 +33,8 @@ class Repository {
       json['description'],
       json['avatar_url'],
       Owner.fromJson(json['owner']),
-      json['created_at'],
-      json['updated_at'],
+      DateTime.parse(json['created_at']),
+      DateTime.parse(json['updated_at']),
       json['language'],
       json['visibility'],
     );

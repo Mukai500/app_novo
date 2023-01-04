@@ -1,11 +1,82 @@
 import 'package:app_novo/models/repository.dart';
 import 'package:app_novo/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class ListRepository extends StatelessWidget {
   const ListRepository({Key? key, required this.repositories});
 
   final List<Repository> repositories;
+
+  Widget retornaLinguagem(String? linguagem) {
+    if (linguagem == 'Dart') {
+      return Container(
+        width: 50,
+        height: 20,
+        color: Color(0xFF00B4AB),
+        child: Text(
+          linguagem!,
+          textAlign: TextAlign.center,
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      );
+    } else if (linguagem == 'PHP') {
+      return Container(
+        width: 50,
+        height: 20,
+        color: Color(0xFF4F5D95),
+        child: Text(
+          linguagem!,
+          textAlign: TextAlign.center,
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      );
+    } else if (linguagem == 'HTML') {
+      return Container(
+        width: 50,
+        height: 20,
+        color: Color(0xFFe44b23),
+        child: Text(
+          linguagem!,
+          textAlign: TextAlign.center,
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      );
+    } else if (linguagem == 'Java') {
+      return Container(
+        width: 50,
+        height: 20,
+        color: Color(0xFFb07219),
+        child: Text(
+          linguagem!,
+          textAlign: TextAlign.center,
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      );
+    } else if (linguagem == 'CSS') {
+      return Container(
+        width: 50,
+        height: 20,
+        color: Color(0xFF563d7c),
+        child: Text(
+          linguagem!,
+          textAlign: TextAlign.center,
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      );
+    }
+
+    return Container(
+      width: 50,
+      height: 20,
+      color: Colors.red,
+      child: Text(
+        "-",
+        textAlign: TextAlign.center,
+        style: TextStyle(fontWeight: FontWeight.bold),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,52 +96,114 @@ class ListRepository extends StatelessWidget {
         _buildRow("Dart", 0.85),
         _buildRow("JavaScript", 0.5),
         _buildRow("PHP", 0.55),
-        Text(
-          "Repositórios do meu GitHub: ",
-        ),
-        Flexible(
-          child: Container(
-            color: Colors.black26,
-            child: ListView.builder(
-              scrollDirection: Axis.vertical,
-              itemCount: repositories.length,
-              itemBuilder: ((context, index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      Card(
-                        elevation: 5.0,
+        Expanded(
+          child: Scaffold(
+            appBar: PreferredSize(
+              preferredSize: Size.fromHeight(kToolbarHeight),
+              child: AppBar(
+                automaticallyImplyLeading: true,
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+                centerTitle: true,
+                bottom: TabBar(tabs: [
+                  Tab(
+                    text: "GitHub",
+                  ),
+                  Tab(
+                    text: "Cúrriculo",
+                  )
+                ]),
+              ),
+            ),
+            body: TabBarView(children: [
+              Flexible(
+                child: Container(
+                  color: Colors.black26,
+                  child: ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    itemCount: repositories.length,
+                    itemBuilder: ((context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
                         child: Column(
                           children: [
-                            ListTile(
-                              leading: Image.network(
-                                  "${repositories[index].owner?.avatarUrl}"),
-                              title: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                    "Repositório: ${repositories[index].name}"),
+                            Stack(children: [
+                              Card(
+                                elevation: 5.0,
+                                child: Column(
+                                  children: [
+                                    ListTile(
+                                      leading: Image.network(
+                                          "${repositories[index].owner?.avatarUrl}"),
+                                      title: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Row(
+                                          children: [
+                                            Text(
+                                              "${repositories[index].name}      ",
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      subtitle: Text(repositories[index]
+                                                  .description ==
+                                              null
+                                          ? "Descrição: Sem descrição"
+                                          : "Descrição: ${repositories[index].description}"),
+                                    ),
+                                    Column(
+                                      children: [
+                                        ButtonBar(
+                                          children: [
+                                            ElevatedButton(
+                                                onPressed: () {},
+                                                child:
+                                                    Text("Abrir Repositório")),
+                                          ],
+                                        ),
+                                        Container(
+                                            alignment: Alignment.bottomRight,
+                                            child: Text(
+                                              DateFormat(
+                                                      "'Criado em' : dd/MM/yyyy")
+                                                  .format(repositories[index]
+                                                      .created_at)
+                                                  .toString(),
+                                              style: TextStyle(
+                                                  color: Colors.white60),
+                                            )),
+                                        Container(
+                                            alignment: Alignment.bottomRight,
+                                            child: Text(
+                                              DateFormat(
+                                                      "'Última Atualização' : dd/MM/yyyy")
+                                                  .format(repositories[index]
+                                                      .updated_at)
+                                                  .toString(),
+                                              style: TextStyle(
+                                                  color: Colors.white60),
+                                            )),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
-                              subtitle: Text(repositories[index].description ==
-                                      null
-                                  ? "Descrição: Sem descrição"
-                                  : "Descrição: ${repositories[index].description}"),
-                            ),
-                            ButtonBar(
-                              children: [
-                                ElevatedButton(
-                                    onPressed: () {},
-                                    child: Text("Abrir Repositório"))
-                              ],
-                            ),
+                              Positioned(
+                                  left: 300,
+                                  child: retornaLinguagem(
+                                      repositories[index].language)),
+                            ]),
                           ],
                         ),
-                      ),
-                    ],
+                      );
+                    }),
                   ),
-                );
-              }),
-            ),
+                ),
+              ),
+              Container(),
+            ]),
           ),
         ),
       ],
