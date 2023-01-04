@@ -1,6 +1,7 @@
 import 'package:app_novo/models/repository.dart';
 import 'package:app_novo/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class ListRepository extends StatelessWidget {
   const ListRepository({Key? key, required this.repositories});
@@ -109,7 +110,7 @@ class ListRepository extends StatelessWidget {
                     text: "GitHub",
                   ),
                   Tab(
-                    text: "Teste",
+                    text: "Cúrriculo",
                   )
                 ]),
               ),
@@ -162,6 +163,28 @@ class ListRepository extends StatelessWidget {
                                                     Text("Abrir Repositório")),
                                           ],
                                         ),
+                                        Container(
+                                            alignment: Alignment.bottomRight,
+                                            child: Text(
+                                              DateFormat(
+                                                      "'Criado em' : dd/MM/yyyy")
+                                                  .format(repositories[index]
+                                                      .created_at)
+                                                  .toString(),
+                                              style: TextStyle(
+                                                  color: Colors.white60),
+                                            )),
+                                        Container(
+                                            alignment: Alignment.bottomRight,
+                                            child: Text(
+                                              DateFormat(
+                                                      "'Última Atualização' : dd/MM/yyyy")
+                                                  .format(repositories[index]
+                                                      .updated_at)
+                                                  .toString(),
+                                              style: TextStyle(
+                                                  color: Colors.white60),
+                                            )),
                                       ],
                                     ),
                                   ],
