@@ -8,76 +8,6 @@ class ListRepository extends StatelessWidget {
 
   final List<Repository> repositories;
 
-  Widget retornaLinguagem(String? linguagem) {
-    if (linguagem == 'Dart') {
-      return Container(
-        width: 50,
-        height: 20,
-        color: Color(0xFF00B4AB),
-        child: Text(
-          linguagem!,
-          textAlign: TextAlign.center,
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-      );
-    } else if (linguagem == 'PHP') {
-      return Container(
-        width: 50,
-        height: 20,
-        color: Color(0xFF4F5D95),
-        child: Text(
-          linguagem!,
-          textAlign: TextAlign.center,
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-      );
-    } else if (linguagem == 'HTML') {
-      return Container(
-        width: 50,
-        height: 20,
-        color: Color(0xFFe44b23),
-        child: Text(
-          linguagem!,
-          textAlign: TextAlign.center,
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-      );
-    } else if (linguagem == 'Java') {
-      return Container(
-        width: 50,
-        height: 20,
-        color: Color(0xFFb07219),
-        child: Text(
-          linguagem!,
-          textAlign: TextAlign.center,
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-      );
-    } else if (linguagem == 'CSS') {
-      return Container(
-        width: 50,
-        height: 20,
-        color: Color(0xFF563d7c),
-        child: Text(
-          linguagem!,
-          textAlign: TextAlign.center,
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-      );
-    }
-
-    return Container(
-      width: 50,
-      height: 20,
-      color: Colors.red,
-      child: Text(
-        "-",
-        textAlign: TextAlign.center,
-        style: TextStyle(fontWeight: FontWeight.bold),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     final text = MediaQuery.of(context).platformBrightness == Brightness.dark
@@ -105,14 +35,16 @@ class ListRepository extends StatelessWidget {
                 backgroundColor: Colors.transparent,
                 elevation: 0,
                 centerTitle: true,
-                bottom: TabBar(tabs: [
-                  Tab(
-                    text: "GitHub",
-                  ),
-                  Tab(
-                    text: "Cúrriculo",
-                  )
-                ]),
+                bottom: TabBar(
+                    indicatorColor: Theme.of(context).backgroundColor,
+                    tabs: [
+                      Tab(
+                        text: "GitHub",
+                      ),
+                      Tab(
+                        text: "Cúrriculo",
+                      )
+                    ]),
               ),
             ),
             body: TabBarView(children: [
@@ -163,37 +95,54 @@ class ListRepository extends StatelessWidget {
                                                     Text("Abrir Repositório")),
                                           ],
                                         ),
-                                        Container(
-                                            alignment: Alignment.bottomRight,
-                                            child: Text(
-                                              DateFormat(
-                                                      "'Criado em' : dd/MM/yyyy")
-                                                  .format(repositories[index]
-                                                      .created_at)
-                                                  .toString(),
-                                              style: TextStyle(
-                                                  color: Colors.white60),
-                                            )),
-                                        Container(
-                                            alignment: Alignment.bottomRight,
-                                            child: Text(
-                                              DateFormat(
-                                                      "'Última Atualização' : dd/MM/yyyy")
-                                                  .format(repositories[index]
-                                                      .updated_at)
-                                                  .toString(),
-                                              style: TextStyle(
-                                                  color: Colors.white60),
-                                            )),
+                                        Padding(
+                                          padding: const EdgeInsets.all(2.0),
+                                          child: Container(
+                                              alignment: Alignment.bottomRight,
+                                              child: Text(
+                                                DateFormat(
+                                                        "'Criado em' : dd/MM/yyyy")
+                                                    .format(repositories[index]
+                                                        .created_at)
+                                                    .toString(),
+                                                style: TextStyle(fontSize: 12),
+                                              )),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(2.0),
+                                          child: Container(
+                                              alignment: Alignment.bottomRight,
+                                              child: Text(
+                                                DateFormat(
+                                                        "'Última Atualização' : dd/MM/yyyy")
+                                                    .format(repositories[index]
+                                                        .updated_at)
+                                                    .toString(),
+                                                style: TextStyle(fontSize: 12),
+                                              )),
+                                        ),
                                       ],
                                     ),
                                   ],
                                 ),
                               ),
                               Positioned(
-                                  left: 300,
-                                  child: retornaLinguagem(
-                                      repositories[index].language)),
+                                left: 300,
+                                child: Container(
+                                  width: 50,
+                                  height: 20,
+                                  color:
+                                      retornaCor(repositories[index].language),
+                                  child: Text(
+                                    repositories[index].language == null
+                                        ? "-"
+                                        : "${repositories[index].language}",
+                                    textAlign: TextAlign.center,
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              )
                             ]),
                           ],
                         ),
@@ -253,7 +202,7 @@ Row _buildHeader(BuildContext context) {
         height: 110.0,
         child: CircleAvatar(
           radius: 40,
-          backgroundColor: Color.fromRGBO(186, 104, 200, 1),
+          backgroundColor: Theme.of(context).backgroundColor,
           child: CircleAvatar(
             radius: 49,
             backgroundImage: AssetImage('assets/nathan_picture.jpg'),
@@ -298,4 +247,20 @@ Row _buildHeader(BuildContext context) {
       ),
     ],
   );
+}
+
+Color retornaCor(String? linguagem) {
+  if (linguagem == 'Dart') {
+    return Color(0xFF00B4AB);
+  } else if (linguagem == 'PHP') {
+    return Color(0xFF4F5D95);
+  } else if (linguagem == 'HTML') {
+    return Color(0xFFe44b23);
+  } else if (linguagem == 'Java') {
+    return Color(0xFFb07219);
+  } else if (linguagem == 'CSS') {
+    return Color(0xFF563d7c);
+  }
+
+  return Colors.red;
 }
