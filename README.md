@@ -8,8 +8,9 @@ MyResumeApp é uma aplicação mobile construída para recrutadores, como um por
 
 A aplicação consiste em ser um projeto para ser um como se fosse um currículo, mostrando: experiências, certificações, cursos e utilizando a API do Git Hub, mostrando os meus repositórios e informações sobre ele na tela do App.
 
-## Layout 
+## Updates 
 
+1.01 :
 ### - Adicionado um Botão de Dark mode e tambem funciona se mudar o sistema.
 
 ### - Clicando no Repositório, abre o link no navegador
