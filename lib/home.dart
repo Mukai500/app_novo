@@ -52,26 +52,29 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: true,
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          actions: [
-            Row(
-              children: [
-                Icon(Icons.dark_mode),
-                BotaoMudarTema(),
-              ],
-            )
-          ],
-        ),
-        body: Container(
-          child: Column(
-            children: [
-              Expanded(child: ListRepository(repositories: _repositorios))
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+          appBar: AppBar(
+            automaticallyImplyLeading: true,
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            actions: [
+              Row(
+                children: [
+                  Icon(Icons.dark_mode),
+                  BotaoMudarTema(),
+                ],
+              )
             ],
           ),
-        ));
+          body: Container(
+            child: Column(
+              children: [
+                Expanded(child: ListRepository(repositories: _repositorios))
+              ],
+            ),
+          )),
+    );
   }
 }
