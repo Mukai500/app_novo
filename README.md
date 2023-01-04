@@ -1,10 +1,10 @@
-# Meu Currículo
+# MyResumeApp
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/NSuzano/Meu-Curriculo/blob/master/LICENCE) 
 
 # Sobre o projeto
 
 
-Meu-Curriculo(Nome temporário) é uma aplicação mobile construída para recrutadores, como um portifólio.
+MyResumeApp é uma aplicação mobile construída para recrutadores, como um portifólio.
 
 A aplicação consiste em ser um projeto para ser um como se fosse um currículo, mostrando: experiências, certificações, cursos e utilizando a API do Git Hub, mostrando os meus repositórios e informações sobre ele na tela do App.
 
