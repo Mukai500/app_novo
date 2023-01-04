@@ -11,13 +11,18 @@ A aplicação consiste em ser um projeto para ser um como se fosse um currículo
 ## Updates 
 
 1.01 :
-### - Adicionado um Botão de Dark mode e tambem funciona se mudar o sistema.
-
-### - Clicando no Repositório, abre o link no navegador
+ - Adicionado um Botão de Dark mode e tambem funciona se mudar o sistema.
+ - Clicando no Repositório, abre o link no navegador
 
 <img src="https://github.com/NSuzano/MyResumeApp/blob/master/assets/Screenshot_1672622725.png" width="270">        <img src="https://github.com/NSuzano/MyResumeApp/blob/master/assets/Screenshot_1672623876.png" width="270">
 
+1.02 :
 
+ - Adicionado 2 Abas para mostrar os repositórios e meu currículo pessoal.
+
+ - Nome das linguagens dos repositórios, ficam acima do card com cada cor igual ao do github, não tenho fica como " - ".
+
+<img src="https://github.com/NSuzano/MyResumeApp/blob/master/assets/Screenshot_1672869410.png" width="270">        <img src="https://github.com/NSuzano/MyResumeApp/blob/master/assets/Screenshot_1672869415.png" width="270">
 
 
 # Tecnologias utilizadas
@@ -31,7 +36,7 @@ A aplicação consiste em ser um projeto para ser um como se fosse um currículo
 
 # Como executar o projeto
 
-
+><
 
 # Autor
 
