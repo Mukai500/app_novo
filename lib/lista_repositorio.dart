@@ -2,6 +2,7 @@ import 'package:app_novo/models/repository.dart';
 import 'package:app_novo/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ListRepository extends StatelessWidget {
   const ListRepository({Key? key, required this.repositories});
@@ -90,7 +91,29 @@ class ListRepository extends StatelessWidget {
                                         ButtonBar(
                                           children: [
                                             ElevatedButton(
-                                                onPressed: () {},
+                                                onPressed: () async {
+                                                  var url = repositories[index]
+                                                      .htmlurl;
+                                                  try {
+                                                    await launchUrl(
+                                                        Uri.parse(url));
+                                                  } catch (e) {}
+
+                                                  // if (await canLaunchUrl(
+                                                  //     Uri.parse(url))) {
+                                                  //   await launchUrl(
+                                                  //       Uri.parse(url));
+                                                  // } else {
+                                                  //   ScaffoldMessenger.of(
+                                                  //           context)
+                                                  //       .showSnackBar(SnackBar(
+                                                  //           duration:
+                                                  //               const Duration(
+                                                  //                   seconds: 4),
+                                                  //           content: Text(
+                                                  //               "Url Inválida $url")));
+                                                  // }
+                                                },
                                                 child:
                                                     Text("Abrir Repositório")),
                                           ],
@@ -151,7 +174,34 @@ class ListRepository extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(),
+              Container(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "Experiências",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Theme.of(context).backgroundColor),
+                      ),
+                    ),
+                    Divider(
+                        thickness: 5, color: Theme.of(context).backgroundColor),
+                    RichText(
+                        text: TextSpan(
+                            text: "",
+                            style: TextStyle(fontSize: 16),
+                            children: [
+                          TextSpan(
+                              text: "Junior Mobile Developer ",
+                              style: TextStyle(fontWeight: FontWeight.bold)),
+                          TextSpan(text: " - Datka (2021 - 2022)"),
+                        ]))
+                  ],
+                ),
+              ),
             ]),
           ),
         ),
@@ -240,7 +290,13 @@ Row _buildHeader(BuildContext context) {
               ],
             ),
             Row(
-              children: [Container()],
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 16.0),
+                  child: Icon(Icons.phone),
+                ),
+                Text("(21) 991157104"),
+              ],
             )
           ],
         ),
