@@ -1,7 +1,7 @@
 class Repository {
   int? id;
   String? name;
-  String? htmlurl;
+  String htmlurl;
   int? stargazerCount;
   String? description;
   String? avatar_url;
