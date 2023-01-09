@@ -24,6 +24,13 @@ A aplicação consiste em ser um projeto para ser um como se fosse um currículo
 
 <img src="https://github.com/NSuzano/MyResumeApp/blob/master/assets/Screenshot_1672869410.png" width="270">        <img src="https://github.com/NSuzano/MyResumeApp/blob/master/assets/Screenshot_1672869415.png" width="270">
 
+1.03 :
+
+ - Adicionado dados a aba currículo, com meus dados.
+ 
+  <img src="https://github.com/NSuzano/MyResumeApp/blob/master/assets/Screenshot_1673271619.png" width="270">
+ 
+
 
 # Tecnologias utilizadas
 ## Back end
@@ -36,7 +43,7 @@ A aplicação consiste em ser um projeto para ser um como se fosse um currículo
 
 # Como executar o projeto
 
-><
+ - Ir na pasta assets/executavel, e executar o .apk ao celular
 
 # Autor
 
