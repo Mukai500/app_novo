@@ -174,32 +174,117 @@ class ListRepository extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        "Experiências",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                            color: Theme.of(context).backgroundColor),
+              SingleChildScrollView(
+                child: Container(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "Experiências",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Theme.of(context).backgroundColor),
+                        ),
                       ),
-                    ),
-                    Divider(
-                        thickness: 5, color: Theme.of(context).backgroundColor),
-                    RichText(
-                        text: TextSpan(
-                            text: "",
-                            style: TextStyle(fontSize: 16),
-                            children: [
-                          TextSpan(
-                              text: "Junior Mobile Developer ",
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                          TextSpan(text: " - Datka (2021 - 2022)"),
-                        ]))
-                  ],
+                      Divider(
+                          thickness: 5,
+                          color: Theme.of(context).backgroundColor),
+                      RichText(
+                          text: TextSpan(
+                              text: "",
+                              style: TextStyle(fontSize: 16),
+                              children: [
+                            TextSpan(
+                                text: "Junior Mobile Developer ",
+                                style: TextStyle(
+                                    color: Theme.of(context).backgroundColor,
+                                    fontWeight: FontWeight.bold)),
+                            TextSpan(
+                                text: " - Datka (2021 - 2022)",
+                                style: TextStyle(
+                                    color: Theme.of(context).backgroundColor)),
+                          ])),
+                      Center(
+                        child: Container(
+                          padding: const EdgeInsets.all(8.0),
+                          color: Theme.of(context).canvasColor,
+                          child: Text(
+                              "I had the opportunity to take a course on Flutter's Udemy to develop apps for Google play. 3 applications published on Google play were developed, using the Flutter/Dart communication language with JSON. Development of functionalities for the Datka Ponto application. System focused on registering employees' electronic attendance. And also develop new functions for the company's website."),
+                        ),
+                      ),
+                      RichText(
+                          text: TextSpan(
+                              text: "",
+                              style: TextStyle(fontSize: 16),
+                              children: [
+                            TextSpan(
+                                text: "Jovem Aprendiz",
+                                style: TextStyle(
+                                    color: Theme.of(context).backgroundColor,
+                                    fontWeight: FontWeight.bold)),
+                            TextSpan(
+                                text: " - NEWE Seguros (2019 - 2020)",
+                                style: TextStyle(
+                                    color: Theme.of(context).backgroundColor)),
+                          ])),
+                      Center(
+                        child: Container(
+                          padding: EdgeInsets.all(8.0),
+                          color: Theme.of(context).canvasColor,
+                          child: Text(
+                              "Aprendiz na área de administração e suporte de TI. Foram várias atividades administrativas, organização de documentos, problemas na impressora, impressão de documentos, utilização de exel eword para documentação, suporte aos usuários com problemas na máquina"),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "Formação Acadêmica",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Theme.of(context).backgroundColor),
+                        ),
+                      ),
+                      Divider(
+                          thickness: 5,
+                          color: Theme.of(context).backgroundColor),
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: RichText(
+                            text: TextSpan(
+                                text: "",
+                                style: TextStyle(fontSize: 16),
+                                children: [
+                              TextSpan(
+                                  text: "UNOPAR ",
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
+                              TextSpan(
+                                  text:
+                                      " - Análise e Desenvolvimento de Sistemas (2019 - 2022)"),
+                            ])),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "Certificados e Cursos",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Theme.of(context).backgroundColor),
+                        ),
+                      ),
+                      Divider(
+                          thickness: 5,
+                          color: Theme.of(context).backgroundColor),
+                      Text("Udemy Flutter -  2021"),
+                      Text("Curso Técnico Senac -  2017"),
+                      Text("Curso Montagem e Manutenção -  2015"),
+                      Text("FIRJAN SENAI -  2016"),
+                    ],
+                  ),
                 ),
               ),
             ]),
