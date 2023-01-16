@@ -1,4 +1,4 @@
-import 'package:app_novo/providers/theme_provider.dart';
+import 'package:MyResumeApp/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'home.dart';
