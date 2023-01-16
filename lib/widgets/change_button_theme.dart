@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:app_novo/providers/theme_provider.dart';
 import 'package:provider/provider.dart';
+
+import '../providers/theme_provider.dart';
 
 class BotaoMudarTema extends StatelessWidget {
   @override

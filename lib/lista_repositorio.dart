@@ -1,8 +1,9 @@
-import 'package:app_novo/models/repository.dart';
-import 'package:app_novo/providers/theme_provider.dart';
+import 'package:MyResumeApp/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import 'models/repository.dart';
 
 class ListRepository extends StatelessWidget {
   const ListRepository({Key? key, required this.repositories});

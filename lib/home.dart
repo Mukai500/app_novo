@@ -1,11 +1,12 @@
 import 'dart:async';
 
-import 'package:app_novo/lista_repositorio.dart';
-import 'package:app_novo/models/repository.dart';
-import 'package:app_novo/widgets/change_button_theme.dart';
+import 'package:MyResumeApp/widgets/change_button_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+
+import 'lista_repositorio.dart';
+import 'models/repository.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
