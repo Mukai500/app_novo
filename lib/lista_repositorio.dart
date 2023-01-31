@@ -44,7 +44,7 @@ class ListRepository extends StatelessWidget {
                         text: "GitHub",
                       ),
                       Tab(
-                        text: "Cúrriculo",
+                        text: "Currículo",
                       )
                     ]),
               ),
