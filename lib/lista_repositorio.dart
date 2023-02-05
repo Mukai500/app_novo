@@ -52,7 +52,6 @@ class ListRepository extends StatelessWidget {
             body: TabBarView(children: [
               Flexible(
                 child: Container(
-                  color: Colors.black26,
                   child: ListView.builder(
                     scrollDirection: Axis.vertical,
                     itemCount: repositories.length,
@@ -153,7 +152,7 @@ class ListRepository extends StatelessWidget {
                               Positioned(
                                 left: 300,
                                 child: Container(
-                                  width: 50,
+                                  width: 80,
                                   height: 20,
                                   color:
                                       retornaCor(repositories[index].language),
@@ -212,7 +211,7 @@ class ListRepository extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           color: Theme.of(context).canvasColor,
                           child: Text(
-                              "I had the opportunity to take a course on Flutter's Udemy to develop apps for Google play. 3 applications published on Google play were developed, using the Flutter/Dart communication language with JSON. Development of functionalities for the Datka Ponto application. System focused on registering employees' electronic attendance. And also develop new functions for the company's website."),
+                              "Desenvolvedor de 3 apps publicados na google play utilizando a linguagem Flutter, elaboração de documentações, Desenvolvedor Web adicionando novas funções ao site da empresa e fui gerenciador do Google Console onde publica o app."),
                         ),
                       ),
                       RichText(
@@ -251,22 +250,15 @@ class ListRepository extends StatelessWidget {
                       Divider(
                           thickness: 5,
                           color: Theme.of(context).backgroundColor),
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: RichText(
-                            text: TextSpan(
-                                text: "",
-                                style: TextStyle(fontSize: 16),
-                                children: [
-                              TextSpan(
-                                  text: "UNOPAR ",
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.bold)),
-                              TextSpan(
-                                  text:
-                                      " - Análise e Desenvolvimento de Sistemas (2019 - 2022)"),
-                            ])),
-                      ),
+                      Container(
+                          color: Theme.of(context).canvasColor,
+                          padding: const EdgeInsets.all(10.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                  "UNOPAR - Análise e Desenvolvimento de Sistemas (2019 - 2022)"),
+                            ],
+                          )),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
@@ -280,10 +272,21 @@ class ListRepository extends StatelessWidget {
                       Divider(
                           thickness: 5,
                           color: Theme.of(context).backgroundColor),
-                      Text("Udemy Flutter -  2021"),
-                      Text("Curso Técnico Senac -  2017"),
-                      Text("Curso Montagem e Manutenção -  2015"),
-                      Text("FIRJAN SENAI -  2016"),
+                      Container(
+                        color: Theme.of(context).canvasColor,
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          children: [
+                            Text(
+                                "Desenvolvendo Mobile com Android Studio -  2023"),
+                            Text("Udemy Flutter -  2021"),
+                            Text("Língua Inglesa: Basic Review -  2019"),
+                            Text("Curso Técnico Senac -  2017"),
+                            Text("Curso Montagem e Manutenção -  2015"),
+                            Text("FIRJAN SENAI -  2016"),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
