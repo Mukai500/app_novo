@@ -30,6 +30,11 @@ A aplicação consiste em ser um projeto para ser um como se fosse um currículo
  
   <img src="https://github.com/NSuzano/MyResumeApp/blob/master/assets/Screenshot_1673271619.png" width="270">
  
+1.04:
+ - Aumentado o tamanho do container da linguagem, para melhor visualização.
+ - Melhorado grafia e outros dados
+ 
+   <img src="https://github.com/NSuzano/MyResumeApp/blob/master/assets/white1.png" width="270"><img src="https://github.com/NSuzano/MyResumeApp/blob/master/assets/dark1.png" width="270">
 
 
 # Tecnologias utilizadas
